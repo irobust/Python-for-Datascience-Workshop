@@ -5,9 +5,13 @@ from pathlib import Path
 
 if Path("olympics_1896_2004.csv").exists():
     oo = pd.read_csv("olympics_1896_2004.csv", skiprows=5)
+    pprint(oo.shape)
+    pprint(oo.head())
+    pprint(oo.tail())
+    pprint(oo.sample(5))
+    pprint(oo.describe())
     pprint(oo.describe([0.8,0.9]))
     pprint(oo.info())
-    pprint(oo.shape)
 else:
     print("File not found!")
 
